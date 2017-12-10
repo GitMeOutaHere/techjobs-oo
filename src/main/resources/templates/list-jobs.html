@@ -8,7 +8,29 @@
 
 <div class="container body-content">
 
+    <!--h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Position Type</th>
+            <th>Core Competency</th>
+        </tr>
+
+        <tr th:each="job : ${jobs}">
+
+            <td th:each="column : ${job.keySet()}" th:text="${job.get(column)}">
+
+            </td>
+
+
+        </tr>
+    </table-->
+
 
     <div th:unless="${jobs} and ${jobs.size()}">
         <h2>No Results</h2>
